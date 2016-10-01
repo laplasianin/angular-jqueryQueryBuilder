@@ -4,7 +4,6 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
       restrict: 'AE',
       scope: {
         options: '=',
-        api: '=',
         builder: '='
       },
       link: function($scope, $element) {
@@ -13,13 +12,10 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
           return $element[0].queryBuilder.setRules(getRulesOrDefault());
         };
         setBuilder = function() {
-          $scope.builder = $element[0].queryBuilder;
-          if ($scope.api) {
-            return $scope.api.updateRules = _updateRules;
-          }
+          return $scope.builder = $element[0].queryBuilder;
         };
         viewToModelNotificator = function() {
-          return $element.on('afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder afterUpdateRuleOperator.queryBuilder afterUpdateGroupCondition.queryBuilder afterReset.queryBuilder              afterMove.queryBuilder afterSetFilters.queryBuilder         afterInvert.queryBuilder afterDeleteRule.queryBuilder         afterDeleteGroup.queryBuilder', function() {
+          return $($element).on('afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder afterUpdateRuleOperator.queryBuilder afterUpdateGroupCondition.queryBuilder afterReset.queryBuilder              afterMove.queryBuilder afterSetFilters.queryBuilder         afterInvert.queryBuilder afterDeleteRule.queryBuilder         afterDeleteGroup.queryBuilder', function() {
             var newRules;
             newRules = $element[0].queryBuilder.getRules();
             if ((!angular.equals(newRules, $scope.options.rules)) && ((newRules != null ? newRules.condition : void 0) || (newRules != null ? newRules.rules : void 0))) {
@@ -39,7 +35,7 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
           }
         };
         launchBuilder = function() {
-          return $element.queryBuilder($scope.options);
+          return $($element).queryBuilder($scope.options);
         };
         init = function() {
           launchBuilder();

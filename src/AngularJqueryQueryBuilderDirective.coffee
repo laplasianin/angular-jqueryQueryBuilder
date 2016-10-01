@@ -3,7 +3,6 @@ angular.module 'angular-jquery-querybuilder', []
   restrict: 'AE'
   scope:
     options: '='
-    api: '='
     builder: '='
 
   link: ($scope, $element) ->
@@ -13,11 +12,9 @@ angular.module 'angular-jquery-querybuilder', []
 
     setBuilder = ->
       $scope.builder = $element[0].queryBuilder
-      if $scope.api
-        $scope.api.updateRules = _updateRules
 
     viewToModelNotificator = ->
-      $element.on 'afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder
+      $($element).on 'afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder
                    afterUpdateRuleOperator.queryBuilder afterUpdateGroupCondition.queryBuilder
                    afterReset.queryBuilder              afterMove.queryBuilder
                    afterSetFilters.queryBuilder         afterInvert.queryBuilder
@@ -33,7 +30,7 @@ angular.module 'angular-jquery-querybuilder', []
         $scope.options.rules
 
     launchBuilder = ->
-      $element.queryBuilder $scope.options
+      $($element).queryBuilder $scope.options
 
     init = ->
       launchBuilder()
