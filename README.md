@@ -29,18 +29,19 @@ $('#builder').queryBuilder({
 ```
 
 #### builder
-Not required, plain js object. After builder initialization is completed will be populated by by property .builder which will contain builder object
+Not required, plain js object. After builder initialization is completed will be populated by property .builder which will contain builder object
 
-### Enhancement
+### Enhancements
 
 #### Additional events
 - QueryBuilderValueChanged. Event fires after any changes in builder values has happened (value is changed, rule/group is added/deleted, operator is changed, group condition is changed)
 
 ### Notes
 
-Please note that 2-way binding is not implemented so changes in 'options' attribute don't lead to builder update. You have to handle it by yourself:
+Please note that 2-way binding is not implemented so changes in 'options' attribute don't lead to builder update. It was done this way because of performance impact and some problem with circular updates (but may be will be implemented in feauture).
+You have to handle it by yourself:
 
-- After rules change just call queryBuilder.setRules(newRules) method
+- After rules object changes just call queryBuilder.setRules(newRules) method
 - After any other options change (for instance in filter) you need to reinstantiate builder (because there is no API in jquery). The simpliest way to do this is add nd-if into directive and switch it to fals eand then back to true:
 
 ```html
@@ -55,3 +56,5 @@ reinitializeFilter = function() {
   }, 50);  
 }
 ```
+
+And vice versa: rules object is not updated after it's updated from UI. You have to manually collect new rules by invoking ``` .getRules()  ``` method
