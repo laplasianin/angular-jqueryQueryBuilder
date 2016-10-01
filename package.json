@@ -1,6 +1,6 @@
 {
   "name": "angular-jq-querybuilder",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Angular wrapper for jQuery-queryBuilder",
   "main": "AngularJqueryQueryBuilderDirective.js",
   "scripts": {
