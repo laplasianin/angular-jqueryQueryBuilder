@@ -2,7 +2,7 @@
   "name": "angular-jq-querybuilder",
   "version": "1.0.0",
   "description": "Angular wrapper for jQuery-queryBuilder",
-  "main": "AngularJqueryQueryBuilderDirective.min.js",
+  "main": "AngularJqueryQueryBuilderDirective.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
