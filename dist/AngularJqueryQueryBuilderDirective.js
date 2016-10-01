@@ -1,5 +1,5 @@
 angular.module('angular-jquery-querybuilder').directive('queryBuilderr', [
-  '$http', function($http) {
+  function() {
     return {
       restrict: 'AE',
       scope: {

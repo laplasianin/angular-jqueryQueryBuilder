@@ -1,5 +1,5 @@
 angular.module 'angular-jquery-querybuilder'
-.directive 'queryBuilderr', ['$http', () ->
+.directive 'queryBuilderr', [ () ->
   restrict: 'AE'
   scope:
     builder: '='
