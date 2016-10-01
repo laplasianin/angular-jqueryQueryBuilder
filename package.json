@@ -1,0 +1,33 @@
+{
+  "name": "angular-jq-querybuilder",
+  "version": "1.0.0",
+  "description": "Angular wrapper for jQuery-queryBuilder",
+  "main": "AngularJqueryQueryBuilderDirective.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laplasianin/angular-jqueryQueryBuilder.git"
+  },
+  "keywords": [
+    "angular",
+    "jquery",
+    "jQuery-QueryBuilder"
+  ],
+  "author": "Ilya Lebedyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laplasianin/angular-jqueryQueryBuilder/issues"
+  },
+  "homepage": "https://github.com/laplasianin/angular-jqueryQueryBuilder#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.2",
+    "gulp-copy": "0.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gutil": "^1.6.4",
+    "pump": "^1.0.1"
+  }
+}
