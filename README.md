@@ -9,6 +9,7 @@ Angular directive for popular jquery plugin "jQuery query builder" (see https://
 ### Install
  
  - via bower: by running `$ bower install angular-jq-querybuilder` from your terminal
+ - via npm: by running `$  npm install -g angular-jq-querybuilder` from your terminal
  
 ### Usage
 
