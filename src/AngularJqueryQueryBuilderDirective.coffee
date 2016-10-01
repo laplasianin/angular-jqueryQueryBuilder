@@ -1,4 +1,4 @@
-angular.module 'angular-jquery-querybuilder'
+angular.module 'angular-jquery-querybuilder', []
 .directive 'queryBuilderr', [ () ->
   restrict: 'AE'
   scope:
@@ -19,7 +19,7 @@ angular.module 'angular-jquery-querybuilder'
         $scope.builder.api.getRules = -> $element[0].queryBuilder.getRules()
         $scope.builder.api.updateRules = updateRules
         $scope.builder.api.init = launchBuilder
-        $scope.builder.builder = launchBuilder
+        $scope.builder.builder = $element[0].queryBuilder
 
     viewToModelNotificator = ->
       $element.on 'afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder
