@@ -9,6 +9,7 @@ Angular directive for popular jquery plugin "jQuery query builder" (see https://
 ### Install
  
  - via bower: by running `$ bower install angular-jq-querybuilder` from your terminal
+ - via npm: by running `$  npm install -g angular-jq-querybuilder` from your terminal
  
 ### Usage
 
@@ -38,11 +39,11 @@ Not required, plain js object. After builder initialization is completed will be
 
 ### Notes
 
-Please note that 2-way binding is not implemented so changes in 'options' attribute don't lead to builder update. It was done this way because of performance impact and some problem with circular updates (but may be will be implemented in feauture).
+Please note that 2-way binding is not implemented so changes in 'options' attribute don't lead to builder update. It was done this way because of performance impact and some problem with circular updates (but may be will be implemented in future).
 You have to handle it by yourself:
 
 - After rules object changes just call queryBuilder.setRules(newRules) method
-- After any other options change (for instance in filter) you need to reinstantiate builder (because there is no API in jquery). The simpliest way to do this is add nd-if into directive and switch it to fals eand then back to true:
+- After any other options changes (for instance in filter) you need to reinstantiate builder (because there is no API in jquery). The simpliest way to do this is add ng-if into directive, switch it to false and then back to true:
 
 ```html
 <query-builder ng-if="builderVisible" options="options" builder="qb"></query-builder>
