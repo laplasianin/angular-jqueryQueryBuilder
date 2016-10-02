@@ -2,6 +2,12 @@
 
 Angular directive for popular jquery plugin "jQuery query builder" (see https://github.com/mistic100/jQuery-QueryBuilder)
 
+### Examples
+Eample of usage:
+https://laplasianin.github.io/angular-jqueryQueryBuilder/examples/usage/.
+
+You can find source code under the 'docs' folder
+
 ### Dependencies
  * Angular >= 1.3.0
  * jQuery >= 1.10
