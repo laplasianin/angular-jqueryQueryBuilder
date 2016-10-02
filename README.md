@@ -4,7 +4,8 @@ Angular directive for popular jquery plugin "jQuery query builder" (see https://
 
 ### Examples
 Eample of usage:
-https://laplasianin.github.io/angular-jqueryQueryBuilder/examples/usage/
+https://laplasianin.github.io/angular-jqueryQueryBuilder/examples/usage/.
+
 You can find source code under the 'docs' folder
 
 ### Dependencies
