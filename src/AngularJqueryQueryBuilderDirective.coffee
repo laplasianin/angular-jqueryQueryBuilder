@@ -32,6 +32,10 @@ angular.module 'angular-jquery-querybuilder', []
     launchBuilder = ->
       $($element).queryBuilder $scope.options
 
+
+    getMongo = ->
+      $($element).queryBuilder('getMongo')
+
     init = ->
       launchBuilder()
       setBuilder()

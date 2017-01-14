@@ -7,7 +7,7 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
         builder: '='
       },
       link: function($scope, $element) {
-        var _updateRules, getRulesOrDefault, init, launchBuilder, setBuilder, viewToModelNotificator;
+        var _updateRules, getMongo, getRulesOrDefault, init, launchBuilder, setBuilder, viewToModelNotificator;
         _updateRules = function() {
           return $element[0].queryBuilder.setRules(getRulesOrDefault());
         };
@@ -36,6 +36,9 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
         };
         launchBuilder = function() {
           return $($element).queryBuilder($scope.options);
+        };
+        getMongo = function() {
+          return $($element).queryBuilder('getMongo');
         };
         init = function() {
           launchBuilder();
