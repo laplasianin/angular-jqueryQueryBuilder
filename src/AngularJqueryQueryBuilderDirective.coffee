@@ -1,5 +1,5 @@
 angular.module 'angular-jquery-querybuilder', []
-.directive 'queryBuilder', [ () ->
+  .directive 'queryBuilder', [ () ->
   restrict: 'AE'
   scope:
     options: '='
@@ -12,6 +12,10 @@ angular.module 'angular-jquery-querybuilder', []
 
     setBuilder = ->
       $scope.builder = $element[0].queryBuilder
+
+    rulesChangeEvent = ->
+      $($element).on 'afterCreateRuleInput.queryBuilder', (event, rule) ->
+        $scope.$emit("QueryBuilderValueChanged", rule)
 
     viewToModelNotificator = ->
       $($element).on 'afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder
@@ -39,6 +43,7 @@ angular.module 'angular-jquery-querybuilder', []
     init = ->
       launchBuilder()
       setBuilder()
+      rulesChangeEvent()
       viewToModelNotificator()
     do init
 ]
