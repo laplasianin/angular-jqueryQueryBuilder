@@ -9,7 +9,7 @@ https://laplasianin.github.io/angular-jqueryQueryBuilder/examples/usage/.
 You can find source code under the 'docs' folder
 
 ### Dependencies
- * Angular >= 1.3.0
+ * Angular >= 1.3.0 (*only Angular 1 is supported*)
  * jQuery >= 1.10
  
 ### Install
