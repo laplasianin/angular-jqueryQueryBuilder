@@ -7,12 +7,17 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
         builder: '='
       },
       link: function($scope, $element) {
-        var _updateRules, getRulesOrDefault, init, launchBuilder, setBuilder, viewToModelNotificator;
+        var _updateRules, getMongo, getRulesOrDefault, init, launchBuilder, rulesChangeEvent, setBuilder, viewToModelNotificator;
         _updateRules = function() {
           return $element[0].queryBuilder.setRules(getRulesOrDefault());
         };
         setBuilder = function() {
           return $scope.builder = $element[0].queryBuilder;
+        };
+        rulesChangeEvent = function() {
+          return $($element).on('afterUpdateRuleValue.queryBuilder', function(event, rule) {
+            return $scope.$emit("QueryBuilderRuleChanged", rule);
+          });
         };
         viewToModelNotificator = function() {
           return $($element).on('afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder afterUpdateRuleOperator.queryBuilder afterUpdateGroupCondition.queryBuilder afterReset.queryBuilder              afterMove.queryBuilder afterSetFilters.queryBuilder         afterInvert.queryBuilder afterDeleteRule.queryBuilder         afterDeleteGroup.queryBuilder', function() {
@@ -37,9 +42,13 @@ angular.module('angular-jquery-querybuilder', []).directive('queryBuilder', [
         launchBuilder = function() {
           return $($element).queryBuilder($scope.options);
         };
+        getMongo = function() {
+          return $($element).queryBuilder('getMongo');
+        };
         init = function() {
           launchBuilder();
           setBuilder();
+          rulesChangeEvent();
           return viewToModelNotificator();
         };
         return init();

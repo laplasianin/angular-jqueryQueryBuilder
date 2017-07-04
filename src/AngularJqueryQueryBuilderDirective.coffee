@@ -13,6 +13,10 @@ angular.module 'angular-jquery-querybuilder', []
     setBuilder = ->
       $scope.builder = $element[0].queryBuilder
 
+    rulesChangeEvent = ->
+      $($element).on 'afterUpdateRuleValue.queryBuilder', (event, rule) ->
+        $scope.$emit("QueryBuilderRuleChanged", rule)
+
     viewToModelNotificator = ->
       $($element).on 'afterUpdateRuleValue.queryBuilder    afterUpdateRuleFilter.queryBuilder
                    afterUpdateRuleOperator.queryBuilder afterUpdateGroupCondition.queryBuilder
@@ -32,9 +36,14 @@ angular.module 'angular-jquery-querybuilder', []
     launchBuilder = ->
       $($element).queryBuilder $scope.options
 
+
+    getMongo = ->
+      $($element).queryBuilder('getMongo')
+
     init = ->
       launchBuilder()
       setBuilder()
+      rulesChangeEvent()
       viewToModelNotificator()
     do init
 ]
